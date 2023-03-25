@@ -1,5 +1,5 @@
 class Store:
-    def__init__(self,manufacturer,label,price,date):
+    def __init__(self,manufacturer,label,price,date):
         self.manufacturer = manufacturer
         self.label = label
         self.price = price
@@ -14,20 +14,24 @@ class Store:
 
 
 class User:
-    def__init__(self,name,money,bag):
+    def __init__(self,role,name,money,bag):
+        self.role = role
         self.name = name
         self.money = money
         self.bag = bag
     
 class Cart:
-    def__init__(self,card_number,card_date,card_cvv):
+    def __init__(self,card_number,card_date,card_cvv):
         self.card_number = card_number
         self.card_date = card_date
         self.card_cvv = card_cvv
      
 
-class Admin:
-    def__init__(self,role,product,price):
-        self.role = role
+class Admin(User):
+    """характеристика админа"""
+    def __init__(self,role,product,price):
+        super().__init__(self.role)
         self.produc = product
         self.price = price
+Admin1 = Admin("administrator")
+print(Admin1.role)
